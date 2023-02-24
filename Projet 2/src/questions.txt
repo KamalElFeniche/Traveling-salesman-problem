@@ -1,0 +1,67 @@
+NOTE: Attention, ne changez pas le format de ce fichier. Gardez toutes les
+lignes inchangées et ajoutez seulement vos réponses aux endroits prévus à cet
+effet.
+
+Composition du groupe
+---------------------
+-
+Premier membre du groupe: 	
+Nom: Hernandez Capel
+Prénom: Esteban
+Matricule: 20174817
+Second membre du groupe (optionel):
+Nom: El Feniche
+Prénom: Kamal
+Matricule: 20171282
+-
+Analyse de complexité
+---------------------
+
+1. Donnez les complexités en temps des fonctions suivantes en notation 
+grand-O en fonction du nombre de villes n dans le tour. Justifiez très
+brièvement vos réponses.
+-
+addTownAtTourEnd: O(1), On ne fait que des affectations.
+addTownAfterTourPosition: O(n), présence d'une boucle, qui doit parcourir dans le pire des cas les n-1 derniers TourPosition, afin de mettre à jour la position des villes dans le tour.
+getTourStartPosition: O(1), On ne fait que retourner un pointeur sur une variable de type TourPosition.	
+getNextTourPosition: O(1), On ne fait que retourner un pointeur sur une variable de type TourPosition.
+getTownAtPosition: O(1), On ne fait que retourner un pointeur sur une variable de type Town.
+getTourSize: O(1), On ne fait que retourner une  valeur en accédant à un champ.
+getTourLength: O(n), présence d'une boucle qui parcourt toutes les villes du tour, c'est-à-dire n villes.
+- 
+2. Donnez les complexités en temps des deux heuristiques en notation
+grand-O. Justifiez brièvement vos réponses.
+-
+heuristic1: O(n²), On a deux boucles imbriquées qui vont jusque n, et dont le contenu est O(1).
+heuristic2: O(n²), On a une boucle simple qui contient un appel à getTourLength qui est O(n), à la suite de cet appel on a aussi une boucle qui est O(n). On a donc du O(n²) car getTourLength et la boucle qui la suit ne sont pas imbriqués mais sont en séries.
+-
+5. Calculez les temps de calcul des deux heuristiques pour différents
+nombres de villes (des fichiers vous sont fournis) et vérifiez que ces
+temps de calcul correspondent bien aux complexités théoriques:
+-
+n        heuristic1(s)    heuristic2(s)
+----------------------------------------
+2000		0.156			0.54
+4000		0.75			2.312
+8000		5.352			9.246
+16000		19.37			39.327
+
+Commentaires: On remarque que si le nombre de villes est doublé, alors le temps d'exécution est multiplié par 4. Il s'agit bien d'une complexité O(n²). Tests réalisés sur un processeur intel i3-6006LI, 2.0 GHz
+-
+4. Donnez les longueurs de parcours trouvés par les deux heuristiques sur les villes belges:
+-  
+heuristic1: 12562.698684 km
+heuristic2: 8496.225061	 km
+-
+Autres
+------
+6. Si vous avez travaillé en groupe, comment vous êtes-vous réparti le travail ?
+-Nous avons travaillé ensemble sur chaque étape du projet, afin d'avoir deux points de vue différents pour aborder chaque implémentation de fonction.
+
+-
+7. Pouvez-vous estimer en heures (et par personne) le temps consacré à ce projet ?
+- Une quinzaine d'heures
+
+-
+8. Commentaires ou suggestions ? (optionel)
+-
